@@ -1,4 +1,4 @@
-#LAB1
+# LAB1
 
 Lab1: design and implementation of a digital filter
 
