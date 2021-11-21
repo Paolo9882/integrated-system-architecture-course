@@ -1,0 +1,133 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iir_2nd_order
+Version: O-2018.06-SP4
+Date   : Wed Nov 17 14:37:59 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a_2_reg[1] (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: DOUT_reg[11]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iir_2nd_order      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  a_2_reg[1]/CK (DFFR_X1)                                 0.00       0.00 r
+  a_2_reg[1]/Q (DFFR_X1)                                  0.18       0.18 r
+  mult_76/a[1] (iir_2nd_order_DW_mult_tc_1)               0.00       0.18 r
+  mult_76/U541/Z (XOR2_X1)                                0.10       0.28 r
+  mult_76/U328/ZN (INV_X1)                                0.07       0.34 f
+  mult_76/U535/ZN (NAND2_X1)                              0.11       0.45 r
+  mult_76/U389/ZN (OAI22_X1)                              0.06       0.51 f
+  mult_76/U81/S (HA_X1)                                   0.08       0.59 f
+  mult_76/U532/ZN (AOI222_X1)                             0.11       0.70 r
+  mult_76/U330/ZN (INV_X1)                                0.03       0.73 f
+  mult_76/U531/ZN (AOI222_X1)                             0.09       0.82 r
+  mult_76/U329/ZN (INV_X1)                                0.03       0.85 f
+  mult_76/U530/ZN (AOI222_X1)                             0.09       0.94 r
+  mult_76/U322/ZN (INV_X1)                                0.03       0.97 f
+  mult_76/U529/ZN (AOI222_X1)                             0.09       1.06 r
+  mult_76/U321/ZN (INV_X1)                                0.03       1.09 f
+  mult_76/U528/ZN (AOI222_X1)                             0.09       1.18 r
+  mult_76/U325/ZN (INV_X1)                                0.03       1.21 f
+  mult_76/U527/ZN (AOI222_X1)                             0.09       1.31 r
+  mult_76/U324/ZN (INV_X1)                                0.03       1.33 f
+  mult_76/U526/ZN (AOI222_X1)                             0.09       1.43 r
+  mult_76/U316/ZN (INV_X1)                                0.03       1.45 f
+  mult_76/U525/ZN (AOI222_X1)                             0.09       1.55 r
+  mult_76/U315/ZN (INV_X1)                                0.03       1.57 f
+  mult_76/U524/ZN (AOI222_X1)                             0.09       1.67 r
+  mult_76/U320/ZN (INV_X1)                                0.03       1.70 f
+  mult_76/U523/ZN (AOI222_X1)                             0.09       1.79 r
+  mult_76/U319/ZN (INV_X1)                                0.03       1.82 f
+  mult_76/U522/ZN (AOI222_X1)                             0.09       1.91 r
+  mult_76/U318/ZN (INV_X1)                                0.03       1.94 f
+  mult_76/U521/ZN (AOI222_X1)                             0.09       2.03 r
+  mult_76/U317/ZN (INV_X1)                                0.03       2.06 f
+  mult_76/U520/ZN (AOI222_X1)                             0.09       2.15 r
+  mult_76/U323/ZN (INV_X1)                                0.03       2.18 f
+  mult_76/U10/CO (FA_X1)                                  0.09       2.27 f
+  mult_76/U9/S (FA_X1)                                    0.13       2.40 r
+  mult_76/product[17] (iir_2nd_order_DW_mult_tc_1)        0.00       2.40 r
+  sub_1_root_sub_0_root_sub_77_2/B[1] (iir_2nd_order_DW01_sub_1)
+                                                          0.00       2.40 r
+  sub_1_root_sub_0_root_sub_77_2/U5/ZN (INV_X1)           0.02       2.42 f
+  sub_1_root_sub_0_root_sub_77_2/U2_1/S (FA_X1)           0.12       2.54 f
+  sub_1_root_sub_0_root_sub_77_2/DIFF[1] (iir_2nd_order_DW01_sub_1)
+                                                          0.00       2.54 f
+  sub_0_root_sub_0_root_sub_77_2/A[1] (iir_2nd_order_DW01_sub_0)
+                                                          0.00       2.54 f
+  sub_0_root_sub_0_root_sub_77_2/U2_1/S (FA_X1)           0.18       2.72 r
+  sub_0_root_sub_0_root_sub_77_2/DIFF[1] (iir_2nd_order_DW01_sub_0)
+                                                          0.00       2.72 r
+  mult_79/b[6] (iir_2nd_order_DW_mult_tc_2)               0.00       2.72 r
+  mult_79/U378/ZN (XNOR2_X1)                              0.08       2.80 r
+  mult_79/U375/ZN (OAI22_X1)                              0.04       2.84 f
+  mult_79/U77/S (FA_X1)                                   0.14       2.99 r
+  mult_79/U76/S (FA_X1)                                   0.11       3.10 f
+  mult_79/U529/ZN (AOI222_X1)                             0.11       3.21 r
+  mult_79/U321/ZN (INV_X1)                                0.03       3.24 f
+  mult_79/U528/ZN (AOI222_X1)                             0.09       3.33 r
+  mult_79/U325/ZN (INV_X1)                                0.03       3.36 f
+  mult_79/U527/ZN (AOI222_X1)                             0.09       3.45 r
+  mult_79/U324/ZN (INV_X1)                                0.03       3.48 f
+  mult_79/U526/ZN (AOI222_X1)                             0.09       3.57 r
+  mult_79/U316/ZN (INV_X1)                                0.03       3.60 f
+  mult_79/U525/ZN (AOI222_X1)                             0.09       3.70 r
+  mult_79/U315/ZN (INV_X1)                                0.03       3.72 f
+  mult_79/U524/ZN (AOI222_X1)                             0.09       3.82 r
+  mult_79/U318/ZN (INV_X1)                                0.03       3.84 f
+  mult_79/U523/ZN (AOI222_X1)                             0.09       3.94 r
+  mult_79/U317/ZN (INV_X1)                                0.03       3.96 f
+  mult_79/U522/ZN (AOI222_X1)                             0.09       4.06 r
+  mult_79/U320/ZN (INV_X1)                                0.03       4.09 f
+  mult_79/U521/ZN (AOI222_X1)                             0.09       4.18 r
+  mult_79/U319/ZN (INV_X1)                                0.03       4.21 f
+  mult_79/U520/ZN (AOI222_X1)                             0.09       4.30 r
+  mult_79/U323/ZN (INV_X1)                                0.03       4.32 f
+  mult_79/U10/CO (FA_X1)                                  0.09       4.41 f
+  mult_79/U9/CO (FA_X1)                                   0.09       4.51 f
+  mult_79/U8/CO (FA_X1)                                   0.09       4.60 f
+  mult_79/U7/CO (FA_X1)                                   0.09       4.69 f
+  mult_79/U6/CO (FA_X1)                                   0.09       4.78 f
+  mult_79/U5/CO (FA_X1)                                   0.09       4.87 f
+  mult_79/U358/Z (XOR2_X1)                                0.07       4.94 f
+  mult_79/U357/ZN (XNOR2_X1)                              0.06       5.00 f
+  mult_79/product[22] (iir_2nd_order_DW_mult_tc_2)        0.00       5.00 f
+  add_0_root_add_0_root_add_82_2/B[6] (iir_2nd_order_DW01_add_0)
+                                                          0.00       5.00 f
+  add_0_root_add_0_root_add_82_2/U1_6/S (FA_X1)           0.14       5.14 r
+  add_0_root_add_0_root_add_82_2/SUM[6] (iir_2nd_order_DW01_add_0)
+                                                          0.00       5.14 r
+  DOUT_reg[11]/D (DFFR_X1)                                0.01       5.15 r
+  data arrival time                                                  5.15
+
+  clock MY_CLK (rise edge)                               10.24      10.24
+  clock network delay (ideal)                             0.00      10.24
+  clock uncertainty                                      -0.07      10.17
+  DOUT_reg[11]/CK (DFFR_X1)                               0.00      10.17 r
+  library setup time                                     -0.03      10.14
+  data required time                                                10.14
+  --------------------------------------------------------------------------
+  data required time                                                10.14
+  data arrival time                                                 -5.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.99
+
+
+1

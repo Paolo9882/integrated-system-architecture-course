@@ -1,0 +1,74 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iir_2nd_order_lookahead
+Version: O-2018.06-SP4
+Date   : Wed Nov 17 15:01:36 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: b1[7] (input port clocked by MY_CLK)
+  Endpoint: m4_tr_r_reg[6]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iir_2nd_order_lookahead
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  b1[7] (in)                                              0.00       0.50 f
+  mult_113/b[7] (iir_2nd_order_lookahead_DW_mult_tc_11)
+                                                          0.00       0.50 f
+  mult_113/U660/ZN (XNOR2_X1)                             0.05       0.55 f
+  mult_113/U618/ZN (OAI22_X1)                             0.07       0.62 r
+  mult_113/U127/S (FA_X1)                                 0.13       0.75 f
+  mult_113/U125/S (FA_X1)                                 0.13       0.88 r
+  mult_113/U124/S (FA_X1)                                 0.12       1.00 f
+  mult_113/U504/ZN (NOR2_X1)                              0.04       1.04 r
+  mult_113/U503/ZN (OAI21_X1)                             0.03       1.07 f
+  mult_113/U516/ZN (AOI21_X1)                             0.05       1.12 r
+  mult_113/U517/ZN (OAI21_X1)                             0.03       1.15 f
+  mult_113/U512/ZN (AOI21_X1)                             0.04       1.19 r
+  mult_113/U511/ZN (OAI21_X1)                             0.03       1.23 f
+  mult_113/U405/ZN (AOI21_X1)                             0.04       1.27 r
+  mult_113/U665/ZN (OAI21_X1)                             0.04       1.30 f
+  mult_113/U406/ZN (AOI21_X1)                             0.06       1.36 r
+  mult_113/U666/ZN (OAI21_X1)                             0.04       1.40 f
+  mult_113/U636/ZN (AOI21_X1)                             0.04       1.44 r
+  mult_113/U519/ZN (INV_X1)                               0.02       1.47 f
+  mult_113/U6/CO (FA_X1)                                  0.09       1.56 f
+  mult_113/U5/CO (FA_X1)                                  0.09       1.65 f
+  mult_113/U402/ZN (XNOR2_X1)                             0.05       1.70 f
+  mult_113/product[22] (iir_2nd_order_lookahead_DW_mult_tc_11)
+                                                          0.00       1.70 f
+  U257/Z (MUX2_X1)                                        0.07       1.77 f
+  m4_tr_r_reg[6]/D (DFFR_X1)                              0.01       1.77 f
+  data arrival time                                                  1.77
+
+  clock MY_CLK (rise edge)                                1.89       1.89
+  clock network delay (ideal)                             0.00       1.89
+  clock uncertainty                                      -0.07       1.82
+  m4_tr_r_reg[6]/CK (DFFR_X1)                             0.00       1.82 r
+  library setup time                                     -0.04       1.78
+  data required time                                                 1.78
+  --------------------------------------------------------------------------
+  data required time                                                 1.78
+  data arrival time                                                 -1.77
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
