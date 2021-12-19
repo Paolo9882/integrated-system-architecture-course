@@ -1,0 +1,22 @@
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : clocks
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Tue Nov 30 21:34:57 2021
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+MY_CLK           0.00   {0 0}                         {clk}
+--------------------------------------------------------------------------------
+1

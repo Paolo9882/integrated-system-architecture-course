@@ -1,0 +1,162 @@
+m255
+13
+cModel Technology
+d/home/isa16_2021_2022/GIT/lab_isa_group16/lab2/sim/netlist_sim
+T_opt
+VMB4UbYKhP44TF5c0K[D2?2
+06 8 4 ./work tb_FPmul fast 0
+o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g
+tExplicit 1
+OE;O;6.2g;35
+Eclk_gen
+w1639187994
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../../tb/clk_gen.vhd
+F../../tb/clk_gen.vhd
+l0
+L5
+VhoEn?>SReo1zETo02?eXH1
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Abeh
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work clk_gen hoEn?>SReo1zETo02?eXH1
+l18
+L12
+VFezoh]Z?66Y6NhbU2ACDU1
+OE;C;6.2g;35
+31
+M1 ieee std_logic_1164
+o-93 -work ./work
+tExplicit 1
+Edata_maker
+w1637943481
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../../tb/data_maker.vhd
+F../../tb/data_maker.vhd
+l0
+L9
+VP1Vm]jjSbX;]ZY9h?i?Kg2
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Abeh
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work data_maker P1Vm]jjSbX;]ZY9h?i?Kg2
+l24
+L17
+VkH9^n`8N3gaVDGcZP>27U0
+OE;C;6.2g;35
+31
+M4 ieee std_logic_1164
+M3 ieee std_logic_arith
+M2 ieee std_logic_textio
+M1 std textio
+o-93 -work ./work
+tExplicit 1
+Edata_save
+w1637009543
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8../../tb/data_save.vhd
+F../../tb/data_save.vhd
+l0
+L10
+ViB[GGAjRLgdHk8ZO?Y<aG3
+OE;C;6.2g;35
+31
+o-93 -work ./work
+tExplicit 1
+Abeh
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work data_save iB[GGAjRLgdHk8ZO?Y<aG3
+l19
+L17
+VoEn<:YmebZ[f=hkP1InON2
+OE;C;6.2g;35
+31
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 ieee std_logic_textio
+M1 std textio
+o-93 -work ./work
+tExplicit 1
+vFPmul
+I^zdbl:a8zOJ;X_a;iz]2f2
+VRaLCPV?mDO?e5oS=<JoXb1
+w1639187994
+8../../netlist/FPmul.v
+F../../netlist/FPmul.v
+L0 411
+VRaLCPV?mDO?e5oS=<JoXb1
+OE;L;6.2g;35
+r1
+31
+o-work ./work
+n@f@pmul
+vFPmul_DW01_add_3
+IS]OAU?`cH]jLa<C:?>zN21
+V48KoCVQDhM?Q602;7XETU2
+w1639187994
+8../../netlist/FPmul.v
+F../../netlist/FPmul.v
+L0 43
+V48KoCVQDhM?Q602;7XETU2
+OE;L;6.2g;35
+r1
+31
+o-work ./work
+n@f@pmul_@d@w01_add_3
+vFPmul_DW01_add_4
+I`>nn^>5Beo0j:KEVSk><T1
+VDOOe_0QM^zk9kLf42?4HT2
+w1639187994
+8../../netlist/FPmul.v
+F../../netlist/FPmul.v
+L0 64
+VDOOe_0QM^zk9kLf42?4HT2
+OE;L;6.2g;35
+r1
+31
+o-work ./work
+n@f@pmul_@d@w01_add_4
+vFPmul_DW01_inc_0
+I<8E]P`>N@?VmP;2=_7>N81
+V6_ZU4Kh5Bmj:mz2RSzQ8i2
+w1639187994
+8../../netlist/FPmul.v
+F../../netlist/FPmul.v
+L0 8
+V6_ZU4Kh5Bmj:mz2RSzQ8i2
+OE;L;6.2g;35
+r1
+31
+o-work ./work
+n@f@pmul_@d@w01_inc_0
+vtb_FPmul
+IHWG5bcj`eGW_6==Y5bja23
+VK?=9QX;fPG_k_Y56]9Qf?3
+w1637928108
+8../../tb/tb_FPmul.v
+F../../tb/tb_FPmul.v
+L0 1
+VK?=9QX;fPG_k_Y56]9Qf?3
+OE;L;6.2g;35
+r1
+31
+o-work ./work
+ntb_@f@pmul

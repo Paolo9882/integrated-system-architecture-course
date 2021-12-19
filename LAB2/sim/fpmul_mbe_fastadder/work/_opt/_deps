@@ -1,0 +1,38 @@
+H 2141964 11 3 0 19 15 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 22 ./work.bru(structural) V^3=9LJEBIXcA0?_FS=me0 4 1
+D 19 ./work.clk_gen(beh) 3A4EG4ISUmKLVncd=hHha3 0 1
+D 29 ./work.dadda_tree(structural) 88bfI8D@nb4285R05@b<g3 8 1
+D 22 ./work.data_maker(beh) kH9^n`8N3gaVDGcZP>27U0 1 1
+D 21 ./work.data_save(beh) oEn<:YmebZ[f=hkP1InON2 17 1
+D 22 ./work.fpmul(pipeline) AJ1OPm;PRn;?6]TJ4LogV3 16 1
+D 27 ./work.fpmul_stage1(struct) X4C:zJ@ciddRk08ZM8@5W3 3 1
+D 27 ./work.fpmul_stage2(struct) bVg^zRn[KdLR4JQU7Z;en3 10 1
+D 27 ./work.fpmul_stage3(struct) I27kNMf@^_dDF?mX[?UmU0 13 1
+D 27 ./work.fpmul_stage4(struct) zWU>=bEMieo>ZNkD=C?=R2 15 1
+D 31 ./work.fpnormalize(fpnormalize) >ICK?B]ciEBfk9nDK573=3 11 1
+D 23 ./work.fpround(fpround) ;Zlz?mFR7bL6<Si4iO^>;3 12 1
+D 29 ./work.full_adder(structural) eXZ@Vfe_eMh8WA8F<b=IK0 7 1
+D 29 ./work.half_adder(structural) X8C3f;cdO?FgVj0aGzoTe0 6 1
+D 27 ./work.mbe_mult(structural) @CB1XRf]fVW^30OUdT7oH3 9 1
+D 21 ./work.packfp(packfp) ::WW?]=P6L:iPE`3NNO[O0 14 1
+D 32 ./work.pp_generation(structural) o=aINJ[kQT]cC2PkNoK1j1 5 1
+D 15 ./work.tb_FPmul HWG5bcj`eGW_6==Y5bja23 18 0
+D 25 ./work.unpackfp(unpackfp) 5kT:h0NeIW3J8Udf_5WZN2 2 1
+2 0  0 L]noReBZMWhRPfVkY=2IM3 0 2 1
+2 0  0 AG4TQL`nRJTii_MGWA;];2 6 8 1
+2 0  0 I>HgdD<ba]6a424<e5@1Q0 5 7 1
+2 4 fast 0 EEB=_M6RKnY4;35PFDF]53 14 18 1
+2 0  1 HEB3mYJfnDXSBB@l65A5F3 9 11 1
+2 0  1 IOFoJfLVD]A9O=>jU2V<R2 10 12 1
+2 0  0 3:AGIjCAMnlMC=zoF>^4o0 13 15 1
+2 0  0 3gRhBIz88fieji5elN[K;0 3 5 1
+2 0  0 eDTQ@BQCohOY1<=nK5R8T0 7 9 1
+2 0  1 h@mA7?[Khh0V26?k5UWE<1 11 13 1
+2 0  0 i^`^O1TNNJA4n2VI_`0RO0 12 14 1
+2 0  0 <N;8n5GQXVh`zC3NM<@f23 8 10 1
+2 0  0 TmlW^BaOCT3j`zob0ACG?0 2 4 1
+2 0  0 LdQajE]g^OSlidTCeS87J2 1 3 1
+2 0  0 5ga5khWWk@54[f;@U:KhG0 4 6 1

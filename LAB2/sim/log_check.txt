@@ -1,0 +1,14 @@
+#FPmul - Error log file
+
+Expected		Simulated		Error
+3dc3910d		3DC3910D		0
+0bc80005		0BC80005		0
+3f278ddf		3F278DDF		0
+0b100005		0B100005		0
+3f800000		3F800000		0
+0c440004		0C440004		0
+3f278ddf		3F278DDF		0
+0da20000		0DA20000		0
+3dc3910d		3DC3910D		0
+
+Total error : 0

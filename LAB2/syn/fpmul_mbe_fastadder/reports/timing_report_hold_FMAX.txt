@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : FPmul
+Version: O-2018.06-SP4
+Date   : Sat Dec 11 00:10:17 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: I2/EXP_in_int_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: I2/EXP_in_reg[0]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FPmul              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  I2/EXP_in_int_reg_reg[0]/CK (DFF_X1)                    0.00       0.00 r
+  I2/EXP_in_int_reg_reg[0]/Q (DFF_X1)                     0.08       0.08 f
+  I2/EXP_in_reg[0]/D (DFF_X1)                             0.01       0.09 f
+  data arrival time                                                  0.09
+
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.07       0.07
+  I2/EXP_in_reg[0]/CK (DFF_X1)                            0.00       0.07 r
+  library hold time                                       0.00       0.07
+  data required time                                                 0.07
+  --------------------------------------------------------------------------
+  data required time                                                 0.07
+  data arrival time                                                 -0.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.02
+
+
+1

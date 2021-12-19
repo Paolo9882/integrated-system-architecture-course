@@ -1,0 +1,1771 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                Version O-2018.06-SP4 for linux64 - Nov 27, 2018
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# design_vision script for the synthesis
+# Variables
+# Increment version as you do new synthesis to avoid overwriting old reports
+variable version $SYN_VERSION
+# Analyze the VHDL files from the src folder
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/FPmul.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL
+Compiling Architecture PIPELINE of FPMUL
+Presto compilation completed successfully.
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb'
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/fpmul_stage1_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE1
+Compiling Architecture STRUCT of FPMUL_STAGE1
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/fpmul_stage2_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE2
+Compiling Architecture STRUCT of FPMUL_STAGE2
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/fpmul_stage3_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE3
+Compiling Architecture STRUCT of FPMUL_STAGE3
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/fpmul_stage4_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE4
+Compiling Architecture STRUCT of FPMUL_STAGE4
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/bru.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration BRU
+Compiling Architecture STRUCTURAL of BRU
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/dadda_tree.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration DADDA_TREE
+Compiling Architecture STRUCTURAL of DADDA_TREE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/full_adder.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FULL_ADDER
+Compiling Architecture STRUCTURAL of FULL_ADDER
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/half_adder.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration HALF_ADDER
+Compiling Architecture STRUCTURAL of HALF_ADDER
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/pp_generation.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration PP_GENERATION
+Compiling Architecture STRUCTURAL of PP_GENERATION
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_mbe_fastadder/mbe_mult.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration MBE_MULT
+Compiling Architecture STRUCTURAL of MBE_MULT
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/fpnormalize_fpnormalize.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPNORMALIZE
+Compiling Architecture FPNORMALIZE of FPNORMALIZE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/fpround_fpround.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPROUND
+Compiling Architecture FPROUND of FPROUND
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/packfp_packfp.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration PACKFP
+Compiling Architecture PACKFP of PACKFP
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/unpackfp_unpackfp.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration UNPACKFP
+Compiling Architecture UNPACKFP of UNPACKFP
+Presto compilation completed successfully.
+1
+# Preserve rtl names to ease the procedure for power consumption estimation
+set power_preserve_rtl_hier_names true
+true
+# Elaborate the architecture
+elaborate $ENTITY_NAME -lib WORK
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine FPmul line 162 in file
+		'../../src/fpmul_mbe_fastadder/FPmul.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    FP_A_reg_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    FP_B_reg_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'FPmul'.
+Information: Building the design 'FPmul_stage1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage1 line 104 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage1_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| SIGN_out_stage1_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      A_EXP_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      A_SIG_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  isINF_stage1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  isNaN_stage1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| isZ_tab_stage1_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      B_EXP_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      B_SIG_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage2 line 103 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage2_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| EXP_in_int_reg_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EXP_in_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| SIG_in_int_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|     SIG_in_reg      | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| EXP_pos_int_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_pos_stage2_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_neg_int_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_neg_stage2_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FPmul_stage2 line 122 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage2_struct.vhd'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|  isINF_stage1_reg_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    isINF_stage2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  isNaN_stage1_reg_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    isNaN_stage2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| isZ_tab_stage1_reg_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   isZ_tab_stage2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| SIGN_out_stage1_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   SIGN_out_stage2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage3'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage3 line 104 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage3_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  EXP_out_round_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  SIG_out_round_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FPmul_stage3 line 114 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage3_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    isINF_tab_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      isNaN_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     isZ_tab_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    SIGN_out_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EXP_pos_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EXP_neg_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage4'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage4 line 128 in file
+		'../../src/fpmul_mbe_fastadder/fpmul_stage4_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      FP_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'UnpackFP'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mbe_mult'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FPnormalize' instantiated from design 'FPmul_stage3' with
+	the parameters "SIG_width=28". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FPround' instantiated from design 'FPmul_stage3' with
+	the parameters "SIG_width=28". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PackFP'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'pp_generation'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pp_generation line 68 in file
+		'../../src/fpmul_mbe_fastadder/pp_generation.vhd'.
+============================================================================
+|    Register Name     | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================
+| int_multiplicand_reg | Latch |  561  |  Y  | N  | N  | N  | -  | -  | -  |
+============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'dadda_tree'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'bru'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'half_adder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'full_adder'. (HDL-193)
+Presto compilation completed successfully.
+1
+uniquify
+Information: Uniquified 2 instances of design 'UnpackFP'. (OPT-1056)
+Information: Uniquified 2 instances of design 'FPnormalize_SIG_width28'. (OPT-1056)
+Information: Uniquified 17 instances of design 'bru'. (OPT-1056)
+Information: Uniquified 44 instances of design 'half_adder'. (OPT-1056)
+Information: Uniquified 480 instances of design 'full_adder'. (OPT-1056)
+1
+link
+
+  Linking design 'FPmul'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (555 designs)             /home/isa16_2021_2022/GIT/lab_isa_group16/lab2/syn/fpmul_mbe_fastadder/FPmul.db, etc
+  NangateOpenCellLibrary (library) /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db
+  dw_foundation.sldb (library) /software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb
+
+1
+# Set constraints
+# Create a clock whose period is set in the variable at the beginning of this document
+create_clock -name MY_CLK -period $PERIOD clk
+1
+report_clock > reports/clock_report_$version.txt
+set_dont_touch_network MY_CLK
+1
+set_fix_hold MY_CLK
+1
+# Set clock uncertainty
+set_clock_uncertainty 0.07 [get_clocks MY_CLK]
+1
+set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clk]
+1
+set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+1
+set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+3.40189
+set_load $OLOAD [all_outputs]
+1
+# Synthesize
+ungroup -all -flatten
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.4 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.4 |     *     |
+============================================================================
+
+
+Information: There are 47 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'FPmul'
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][32]' will be removed. (OPT-1207)
+Information: The register 'I3/SIG_out_round_reg[2]' will be removed. (OPT-1207)
+Information: The register 'I3/SIG_out_round_reg[1]' will be removed. (OPT-1207)
+Information: The register 'I3/SIG_out_round_reg[0]' will be removed. (OPT-1207)
+Information: The register 'I2/SIG_in_reg[1]' will be removed. (OPT-1207)
+Information: The register 'I2/SIG_in_int_reg_reg[1]' will be removed. (OPT-1207)
+Information: The register 'I2/SIG_in_reg[0]' will be removed. (OPT-1207)
+Information: The register 'I2/SIG_in_int_reg_reg[0]' will be removed. (OPT-1207)
+Information: The register 'I1/B_SIG_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][31]' is a constant and will be removed. (OPT-1206)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'FPmul_DW01_add_0'
+  Processing 'FPmul_DW01_inc_0'
+  Processing 'FPmul_DW01_add_1'
+  Processing 'FPmul_DW01_add_2'
+  Processing 'FPmul_DW01_add_3'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[0][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[1][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[2][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[3][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[4][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[5][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[6][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[7][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[8][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[9][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[10][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[11][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[12][24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[13][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[14][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][32]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[15][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I2/MBE/PP_gen/int_multiplicand_reg[16][0]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:33    7703.9      0.66      11.2       1.2                                0.00  
+    0:01:36    7698.8      0.71      12.1       1.2                                0.00  
+    0:01:36    7698.8      0.71      12.1       1.2                                0.00  
+    0:01:37    7699.4      0.70      11.6       1.2                                0.00  
+    0:01:37    7699.4      0.70      11.6       1.2                                0.00  
+    0:01:47    7003.5      0.59       7.8       1.1                                0.00  
+    0:01:49    6995.0      0.60       8.0       1.1                                0.00  
+    0:01:50    6997.7      0.57       7.6       1.1                                0.00  
+    0:01:51    6998.2      0.56       7.0       1.1                                0.00  
+    0:01:53    6999.5      0.55       6.8       1.1                                0.00  
+    0:01:54    7000.1      0.54       6.5       1.1                                0.00  
+    0:01:55    6999.8      0.54       6.5       1.1                                0.00  
+    0:01:56    7000.6      0.54       6.5       1.1                                0.00  
+    0:01:57    7001.4      0.53       6.3       1.1                                0.00  
+    0:01:57    7001.4      0.53       6.3       1.1                                0.00  
+    0:01:57    7001.4      0.53       6.3       1.1                                0.00  
+    0:01:58    7002.2      0.53       6.3       0.0                                0.00  
+    0:01:58    7002.2      0.53       6.3       0.0                                0.00  
+    0:01:58    7002.2      0.53       6.3       0.0                                0.00  
+    0:01:58    7002.2      0.53       6.3       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:58    7002.2      0.53       6.3       0.0                                0.00  
+    0:01:59    7010.4      0.50       6.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:01    7013.6      0.48       5.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:02    7016.0      0.47       5.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:03    7020.5      0.47       5.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:04    7026.7      0.46       5.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:05    7028.8      0.46       5.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:05    7030.9      0.45       5.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:06    7034.6      0.45       5.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:08    7039.2      0.44       5.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:09    7042.6      0.43       4.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:09    7048.7      0.43       4.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:10    7050.1      0.42       4.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:11    7056.7      0.42       4.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:12    7058.8      0.42       4.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:12    7064.7      0.41       4.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:13    7068.9      0.41       4.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:14    7073.5      0.41       4.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:15    7076.7      0.40       4.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:16    7088.1      0.40       4.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:17    7088.6      0.40       4.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:18    7094.8      0.39       3.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:19    7099.0      0.38       3.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:20    7102.7      0.38       3.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:21    7105.9      0.38       3.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:22    7110.2      0.38       3.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:22    7116.6      0.37       3.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:23    7117.6      0.37       3.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:23    7121.6      0.37       3.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:24    7124.3      0.36       3.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:24    7127.7      0.36       3.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:25    7135.4      0.36       3.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:25    7139.4      0.35       3.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:26    7144.2      0.35       3.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:26    7148.0      0.35       3.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:27    7146.9      0.35       3.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:28    7150.6      0.34       3.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:28    7153.0      0.34       3.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:29    7155.4      0.34       3.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:30    7158.3      0.34       3.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:31    7160.5      0.34       2.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:32    7166.3      0.34       2.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:33    7169.2      0.34       2.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:34    7175.1      0.33       2.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:34    7178.3      0.33       2.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:35    7184.7      0.33       2.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:36    7186.3      0.32       2.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:37    7189.2      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:38    7192.4      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:38    7194.8      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:39    7199.3      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:39    7205.1      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:40    7209.1      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:41    7212.9      0.32       2.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:42    7219.5      0.31       2.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:42    7221.1      0.31       2.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:43    7224.6      0.31       2.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:45    7230.9      0.31       2.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:45    7232.8      0.31       2.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:46    7232.3      0.31       2.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:47    7238.9      0.31       2.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:48    7243.7      0.30       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:48    7243.2      0.30       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:49    7249.0      0.30       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:50    7249.6      0.30       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:50    7256.2      0.29       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:50    7257.5      0.29       2.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:51    7262.3      0.29       2.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:52    7263.9      0.29       2.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:52    7262.6      0.29       2.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:52    7267.4      0.29       2.3       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:53    7268.2      0.29       2.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:54    7269.2      0.28       2.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:55    7265.5      0.28       2.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:55    7267.1      0.28       2.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:56    7273.2      0.28       2.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:57    7275.9      0.28       2.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:57    7278.3      0.28       2.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:02:59    7280.2      0.28       2.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:00    7294.5      0.28       2.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:01    7298.5      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:02    7300.9      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:03    7304.4      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:03    7308.1      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:04    7310.5      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:05    7315.5      0.27       2.1       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:06    7317.1      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:06    7319.8      0.27       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:07    7321.9      0.26       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:07    7323.2      0.26       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:08    7326.7      0.26       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:09    7328.3      0.26       2.0       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:09    7332.0      0.26       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:10    7331.5      0.26       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:11    7325.4      0.26       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:12    7327.0      0.26       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:13    7329.1      0.25       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:13    7330.7      0.25       1.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:14    7331.5      0.25       1.9       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:16    7338.1      0.24       1.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:16    7342.4      0.23       1.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:18    7344.8      0.23       1.8       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:18    7345.6      0.23       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:20    7349.0      0.23       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:21    7351.2      0.23       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:22    7353.6      0.23       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:22    7356.5      0.22       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:23    7360.5      0.22       1.7       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:23    7363.1      0.22       1.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:24    7365.0      0.22       1.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:25    7365.0      0.22       1.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:26    7366.1      0.22       1.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:27    7371.4      0.22       1.6       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:27    7371.7      0.22       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:27    7372.5      0.22       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:28    7375.9      0.22       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:29    7381.2      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:29    7383.4      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:29    7384.7      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:30    7386.0      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:30    7385.8      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:32    7385.8      0.21       1.5       0.0                                0.00  
+    0:03:37    7385.8      0.21       1.5       0.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:03:38    7385.8      0.21       1.5       0.0                                0.00  
+    0:03:40    7386.0      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:40    7386.8      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:42    7386.8      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:42    7388.4      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:43    7388.4      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:43    7390.0      0.21       1.5       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:44    7390.8      0.21       1.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:44    7391.1      0.21       1.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:44    7391.1      0.21       1.4       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:03:47    7393.5      0.21       1.4       0.0                                0.00  
+    0:03:48    7395.1      0.21       1.4       0.0                                0.00  
+    0:03:48    7394.8      0.21       1.4       0.0                                0.00  
+    0:03:50    7397.7      0.21       1.3       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:03:50    7397.7      0.21       1.3       0.0                                0.00  
+    0:03:50    7397.7      0.21       1.3       0.0                                0.00  
+    0:03:53    7346.9      0.21       1.3       0.0                                0.00  
+    0:03:54    7344.3      0.21       1.3       0.0                                0.00  
+    0:03:54    7343.7      0.21       1.3       0.0                                0.00  
+    0:03:54    7343.2      0.21       1.3       0.0                                0.00  
+    0:03:54    7342.7      0.21       1.3       0.0                                0.00  
+    0:03:54    7342.7      0.21       1.3       0.0                                0.00  
+    0:03:55    7344.5      0.21       1.3       0.0                                0.00  
+    0:03:55    7349.3      0.21       1.3       0.0                                0.00  
+    0:03:56    7351.7      0.21       1.3       0.0                                0.00  
+    0:03:57    7352.8      0.21       1.3       0.0                                0.00  
+    0:03:58    7352.0      0.21       1.2       0.0                                0.00  
+    0:03:59    7352.8      0.21       1.2       0.0                                0.00  
+    0:04:00    7355.4      0.21       1.2       0.0                                0.00  
+    0:04:01    7355.4      0.21       1.2       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:02    7335.5      0.21       1.3       0.0                                0.00  
+    0:04:03    7336.0      0.21       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:05    7337.3      0.21       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:06    7338.1      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:07    7338.1      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:07    7338.4      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:07    7338.7      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:08    7341.6      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:09    7343.5      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:10    7344.3      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:11    7344.3      0.20       1.2       0.0 I2/SIG_in_int_reg_reg[27]/D      0.00  
+    0:04:12    7343.7      0.20       1.2       0.0                                0.00  
+    0:04:13    7340.5      0.20       1.2       0.0                                0.00  
+    0:04:13    7330.4      0.20       1.2       0.0                                0.00  
+    0:04:14    7330.4      0.20       1.2       0.0                                0.00  
+    0:04:23    6892.6      0.20       1.2       0.0                                0.00  
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+optimize_registers
+  Loading design 'FPmul'
+
+  Beginning retiming
+  ------------------
+Information: Updating design information... (UID-85)
+  Retiming FPmul (top)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[0][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[1][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[2][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[3][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[4][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[5][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[6][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[7][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[8][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[9][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[10][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][24]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[11][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][23]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][22]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][21]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][20]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][19]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][18]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][17]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][16]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][15]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][14]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][13]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][12]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][11]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][10]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][9]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][8]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][7]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][6]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][5]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][4]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][3]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][2]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][1]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][0]'. (RTDC-5)
+Warning: No clock net driving clock pin of cell 'I2/MBE/PP_gen/int_multiplicand_reg[12][0]'. (RTDC-5)
+  Preferred flip-flop is DFFRS_X1 with setup = 0.04
+
+Warning: The design contains the following cells
+	 which have no influence on the design's function but cannot
+	 be removed (e.g. because a dont_touch attribute has been set
+	 set on them). Retiming will ignore these cells in order to 
+	 achieve good results:
+	U3902 (INV_X2)
+	U3835 (OAI21_X1)
+	U5340 (OAI22_X1)
+	U5353 (OAI22_X1)
+	U5373 (OAI22_X1)
+	U5399 (OAI22_X1)
+	U5428 (OAI22_X1)
+	U5462 (OAI22_X1)
+	U5494 (OAI22_X1)
+	U3883 (INV_X2)
+	U7296 (XOR2_X1)
+	U7298 (XOR2_X1)
+	U7300 (XOR2_X1)
+	U7303 (XOR2_X1)
+	U7305 (XOR2_X1)
+	U7307 (XOR2_X1)
+	U7310 (XOR2_X1)
+	U3935 (INV_X2)
+	U5339 (INV_X1)
+	U5352 (INV_X1)
+	U5372 (INV_X1)
+	U5398 (INV_X1)
+	U5427 (INV_X1)
+	U5461 (INV_X1)
+	U5492 (INV_X1)
+	U5317 (INV_X1)
+	U5321 (INV_X1)
+	U3836 (INV_X2)
+	U5338 (XOR2_X1)
+	U7297 (INV_X1)
+	U5351 (XOR2_X1)
+	U7299 (INV_X1)
+	U7301 (INV_X1)
+	U7302 (INV_X1)
+	U5397 (XOR2_X1)
+	U7304 (INV_X1)
+	U5426 (XOR2_X1)
+	U7306 (INV_X1)
+	U7308 (INV_X1)
+	U7309 (INV_X1)
+	U5316 (NAND2_X1)
+	U3919 (XOR2_X1)
+	U5323 (INV_X1)
+	U3912 (XOR2_X1)
+	U5337 (INV_X1)
+	U3899 (INV_X2)
+	U3901 (XOR2_X1)
+	U5350 (INV_X1)
+	U5342 (XOR2_X1)
+	U5359 (XOR2_X1)
+	U5371 (XOR2_X1)
+	U5387 (XOR2_X1)
+	U5396 (INV_X1)
+	U5386 (XOR2_X1)
+	U4896 (XOR2_X1)
+	U5425 (INV_X1)
+	U5403 (XOR2_X1)
+	U5441 (XOR2_X1)
+	U5460 (XOR2_X1)
+	U5322 (INV_X1)
+	U5336 (OAI22_X1)
+	U5320 (NAND2_X1)
+	U3809 (NOR2_X2)
+	U5335 (XOR2_X1)
+	U5341 (INV_X1)
+	U3810 (INV_X2)
+	U5358 (INV_X1)
+	U5370 (INV_X1)
+	U5395 (OAI22_X1)
+	U5385 (INV_X1)
+	U3904 (INV_X2)
+	U5424 (OAI22_X1)
+	U5394 (XOR2_X1)
+	U5402 (INV_X1)
+	U5422 (XOR2_X1)
+	U5440 (INV_X1)
+	U5443 (XOR2_X1)
+	U5459 (INV_X1)
+	U3911 (INV_X2)
+	U5333 (INV_X1)
+	U5334 (INV_X1)
+	U3900 (INV_X2)
+	U4738 (INV_X1)
+	U5349 (OAI21_X1)
+	U3879 (INV_X2)
+	U3838 (NOR2_X2)
+	U3812 (NOR2_X2)
+	U5391 (INV_X1)
+	U5393 (INV_X1)
+	U3891 (INV_X2)
+	U3905 (INV_X2)
+	U5417 (INV_X1)
+	U5421 (INV_X1)
+	U5423 (OAI21_X1)
+	U3837 (NOR2_X2)
+	U3840 (NOR2_X2)
+	U5442 (XOR2_X1)
+	U5458 (OAI21_X1)
+	U5315 (INV_X1)
+	U3839 (INV_X2)
+	U5326 (OAI22_X1)
+	U5332 (NAND2_X1)
+	U3929 (OAI21_X1)
+	U5348 (XOR2_X1)
+	U3813 (INV_X2)
+	U3841 (INV_X2)
+	U5368 (OAI22_X1)
+	U5346 (OAI21_X1)
+	U3847 (NOR2_X2)
+	U5390 (NAND2_X1)
+	U3913 (INV_X2)
+	U5392 (XOR2_X1)
+	U5455 (INV_X1)
+	U3903 (INV_X2)
+	U3884 (NOR2_X2)
+	U3834 (INV_X2)
+	U3846 (NOR2_X2)
+	U5366 (XOR2_X1)
+	U5367 (INV_X1)
+	U5410 (INV_X1)
+	U3885 (NOR2_X2)
+	U3862 (NOR2_X2)
+	U5362 (OAI22_X1)
+	U3918 (INV_X2)
+	U5330 (INV_X1)
+	U5331 (INV_X1)
+	U5369 (XOR2_X1)
+	U5365 (OAI21_X1)
+	U5384 (INV_X1)
+	U5388 (XOR2_X1)
+	U5389 (XOR2_X1)
+	U5361 (INV_X1)
+	U5329 (OAI22_X1)
+	U5345 (OAI21_X1)
+	U5364 (INV_X1)
+	U5327 (NAND2_X1)
+	U5344 (NAND2_X1)
+	U5220 (AND2_X1)
+	U5343 (NAND2_X1)
+
+ (RTDC-60)
+
+  Retiming base-clock MY_CLK, rising edge.
+  Beginning minimum period retiming ...
+  ... minimum period retiming done.
+  Beginning minimum area retiming step 1 ...
+  ... minimum area retiming step 1 done.
+  Beginning minimum area retiming step 2 ...
+  5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100% 
+  ... minimum area retiming step 2 done.
+  Beginning minimum area retiming step 3 ...
+  10% 20% 30% 40% 50% 60% 70% 80% ... 100% 
+  ... minimum area retiming step 3 done.
+  Beginning final register move ...
+  ... final register move done.
+  Lower bound estimate = 1.47
+  Critical path length = 1.47
+  Clock correction = 0.19 (clock-to-Q delay = 0.09, setup = 0.04, uncertainty = 0.07)
+Warning: Design 'FPmul' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+
+  Retiming complete
+  -----------------
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+Information: There are 101 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+Loaded alib file './alib-52/NangateOpenCellLibrary_typical_ecsm_nowlm.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:16    6915.2      0.04       0.8       0.0                           151691.5625      0.00  
+    0:00:16    6915.2      0.04       0.8       0.0                           151691.5625      0.00  
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+Warning: Current implementation 'rpl' of module 'DW01_add'
+	was not found in the files of synthetic_library.
+	Implementation selection of synthetic design
+	'FPmul_DW01_add_3' (cell 'add_1_root_I2/add_156_2') will take longer. (SYNH-22)
+    0:00:18    6915.2      0.04       0.8       0.0                           151691.5625      0.00  
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:18    6915.2      0.04       0.8       0.0                           151691.5625      0.00  
+    0:00:33    6050.7      0.04       0.8       0.0                           138286.2031      0.00  
+    0:00:37    6002.0      0.02       0.5       0.0                           135692.2188      0.00  
+    0:00:38    6002.0      0.02       0.5       0.0                           135692.2188      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:38    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:39    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:39    6002.6      0.00       0.0       0.0                           135742.7812      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:41    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:43    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:00:45    6001.2      0.00       0.0       0.0                           135671.0156      0.00  
+    0:01:01    5576.7      0.00       0.0       0.0                           123623.5781      0.00  
+    0:01:01    5576.7      0.00       0.0       0.0                           123623.5781      0.00  
+    0:01:01    5576.2      0.00       0.0       0.0                           123607.7500      0.00  
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+report_resources > reports/report_resources.txt
+# Print reports
+report_timing -delay max > reports/timing_report_setup_$version.txt
+report_timing -delay min > reports/timing_report_hold_$version.txt
+report_area > reports/area_report_$version.txt
+report_power > reports/power_report_noswitching_$version.txt
+# Save files for switching-activity-based power estimation
+change_names -hierarchy -rules verilog
+1
+#write_sdf ../netlist/$ENTITY_NAME.sdf
+write -f verilog -hierarchy -output ../../netlist/$ENTITY_NAME.v
+Writing verilog file '/home/isa16_2021_2022/GIT/lab_isa_group16/lab2/netlist/FPmul.v'.
+1
+#write_sdc ../netlist/$ENTITY_NAME.sdc
+quit
+
+Thank you...

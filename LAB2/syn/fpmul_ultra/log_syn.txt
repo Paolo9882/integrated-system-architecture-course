@@ -1,0 +1,465 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                Version O-2018.06-SP4 for linux64 - Nov 27, 2018
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# design_vision script for the synthesis
+# Variables
+# Increment version as you do new synthesis to avoid overwriting old reports
+variable version $SYN_VERSION
+# Analyze the VHDL files from the src folder
+analyze -f vhdl -lib WORK ../../src/fpmul_pipeline_finegrain/$ENTITY_NAME.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL
+Compiling Architecture PIPELINE of FPMUL
+Presto compilation completed successfully.
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb'
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_pipeline_finegrain/fpmul_stage1_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE1
+Compiling Architecture STRUCT of FPMUL_STAGE1
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_pipeline_finegrain/fpmul_stage2_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE2
+Compiling Architecture STRUCT of FPMUL_STAGE2
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_pipeline_finegrain/fpmul_stage3_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE3
+Compiling Architecture STRUCT of FPMUL_STAGE3
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/fpmul_pipeline_finegrain/fpmul_stage4_struct.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPMUL_STAGE4
+Compiling Architecture STRUCT of FPMUL_STAGE4
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/fpnormalize_fpnormalize.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPNORMALIZE
+Compiling Architecture FPNORMALIZE of FPNORMALIZE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/fpround_fpround.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FPROUND
+Compiling Architecture FPROUND of FPROUND
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/packfp_packfp.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration PACKFP
+Compiling Architecture PACKFP of PACKFP
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../../src/common/unpackfp_unpackfp.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration UNPACKFP
+Compiling Architecture UNPACKFP of UNPACKFP
+Presto compilation completed successfully.
+1
+# Preserve rtl names to ease the procedure for power consumption estimation
+set power_preserve_rtl_hier_names true
+true
+# Elaborate the architecture
+elaborate $ENTITY_NAME -lib WORK
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine FPmul line 162 in file
+		'../../src/fpmul_pipeline_finegrain/FPmul.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    FP_A_reg_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    FP_B_reg_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'FPmul'.
+Information: Building the design 'FPmul_stage1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage1 line 104 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage1_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| SIGN_out_stage1_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      A_EXP_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      A_SIG_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|  isINF_stage1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  isNaN_stage1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| isZ_tab_stage1_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      B_EXP_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      B_SIG_reg      | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage2 line 97 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage2_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| EXP_in_int_reg_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     EXP_in_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| SIG_in_int_reg_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+|     SIG_in_reg      | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+| EXP_pos_int_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_pos_stage2_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_neg_int_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EXP_neg_stage2_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FPmul_stage2 line 116 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage2_struct.vhd'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+|  isINF_stage1_reg_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    isINF_stage2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  isNaN_stage1_reg_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    isNaN_stage2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| isZ_tab_stage1_reg_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   isZ_tab_stage2_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| SIGN_out_stage1_reg_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   SIGN_out_stage2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage3'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage3 line 104 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage3_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  EXP_out_round_reg  | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  SIG_out_round_reg  | Flip-flop |  28   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FPmul_stage3 line 114 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage3_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    isINF_tab_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      isNaN_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     isZ_tab_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    SIGN_out_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EXP_pos_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     EXP_neg_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'FPmul_stage4'. (HDL-193)
+
+Inferred memory devices in process
+	in routine FPmul_stage4 line 128 in file
+		'../../src/fpmul_pipeline_finegrain/fpmul_stage4_struct.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      FP_Z_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'UnpackFP'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FPnormalize' instantiated from design 'FPmul_stage3' with
+	the parameters "SIG_width=28". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FPround' instantiated from design 'FPmul_stage3' with
+	the parameters "SIG_width=28". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PackFP'. (HDL-193)
+Presto compilation completed successfully.
+1
+uniquify
+Information: Uniquified 2 instances of design 'UnpackFP'. (OPT-1056)
+Information: Uniquified 2 instances of design 'FPnormalize_SIG_width28'. (OPT-1056)
+1
+link
+
+  Linking design 'FPmul'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (11 designs)              /home/isa16_2021_2022/GIT/lab_isa_group16/lab2/syn/fpmul_ultra/FPmul.db, etc
+  NangateOpenCellLibrary (library) /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db
+  dw_foundation.sldb (library) /software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb
+
+1
+# Set constraints
+# Create a clock whose period is set in the variable at the beginning of this document
+create_clock -name MY_CLK -period $PERIOD clk
+1
+report_clock > reports/clock_report_$version.txt
+set_dont_touch_network MY_CLK
+1
+# Set clock uncertainty
+set_clock_uncertainty 0.07 [get_clocks MY_CLK]
+1
+set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clk]
+1
+set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+1
+set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+3.40189
+set_load $OLOAD [all_outputs]
+1
+# Synthesize
+ungroup -all -flatten
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.4 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.4 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 29 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'FPmul'
+
+Loaded alib file './alib-52/NangateOpenCellLibrary_typical_ecsm_nowlm.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 1 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'FPmul'
+Information: The register 'I1/A_SIG_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/A_SIG_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'I1/B_SIG_reg[24]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'FPmul'.
+Information: The register 'I3/SIG_out_round_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: Added key list 'DesignWare' to design 'FPmul'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:23    4086.8      0.26       5.5      35.7                           83667.4922
+  Mapping 'FPmul_DW_mult_uns_1'
+  Mapping 'FPmul_DW01_add_2'
+    0:02:08    4578.7      0.07       1.3       8.0                           101310.6641
+    0:02:08    4578.7      0.07       1.3       8.0                           101310.6641
+    0:02:11    4584.2      0.07       1.3       8.0                           101410.8438
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:02:34    4368.8      0.07       1.1       0.0                           94125.2578
+    0:02:36    4321.4      0.07       1.0       0.0                           92842.5469
+    0:02:36    4321.4      0.07       1.0       0.0                           92842.5469
+    0:02:39    4323.3      0.07       1.0       0.0                           92909.3750
+    0:02:40    4323.3      0.07       1.0       0.0                           92909.3750
+    0:02:40    4323.3      0.07       1.0       0.0                           92909.3750
+    0:02:40    4323.3      0.07       1.0       0.0                           92909.3750
+    0:02:42    4323.3      0.07       1.0       0.0                           92909.3750
+    0:02:42    4323.3      0.07       1.0       0.0                           92909.3750
+    0:03:40    4404.4      0.04       0.6       0.0                           95958.9688
+    0:03:40    4404.4      0.04       0.6       0.0                           95958.9688
+    0:03:43    4404.4      0.04       0.6       0.0                           95958.9688
+    0:03:43    4404.4      0.04       0.6       0.0                           95958.9688
+    0:04:25    4404.4      0.04       0.6       0.0                           95958.9688
+    0:04:25    4404.4      0.04       0.6       0.0                           95958.9688
+    0:04:29    4404.4      0.04       0.6       0.0                           95958.9688
+    0:04:29    4404.4      0.04       0.6       0.0                           95958.9688
+    0:05:13    4404.4      0.04       0.6       0.0                           95958.9688
+    0:05:13    4404.4      0.04       0.6       0.0                           95958.9688
+    0:05:15    4404.4      0.04       0.6       0.0                           95958.9688
+    0:05:23    4390.9      0.00       0.0       0.0 I2/SIG_in_int_reg_reg[26]/D 94950.2500
+    0:05:26    4391.7      0.00       0.0       0.0                           94791.3828
+    0:05:26    4391.7      0.00       0.0       0.0                           94791.3828
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:05:26    4391.7      0.00       0.0       0.0                           94791.3828
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+    0:05:32    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:32    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:32    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:05:33    4234.7      0.00       0.0       0.0                           88819.1797
+    0:05:35    4203.1      0.01       0.1       0.0                           87086.8359
+    0:05:35    4208.7      0.00       0.0       0.0                           87317.1797
+    0:05:35    4208.7      0.00       0.0       0.0                           87317.1797
+    0:05:37    4208.7      0.00       0.0       0.0                           87306.9531
+    0:05:39    4199.6      0.00       0.0       0.0                           86973.8906
+    0:05:39    4199.6      0.00       0.0       0.0                           86973.8906
+    0:05:39    4199.6      0.00       0.0       0.0                           86973.8906
+    0:05:39    4199.6      0.00       0.0       0.0                           86973.8906
+    0:05:40    4198.5      0.00       0.0       0.0                           86918.6953
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+report_resources > reports/report_resources.txt
+# Print reports
+report_timing -delay max > reports/timing_report_setup_$version.txt
+report_timing -delay min > reports/timing_report_hold_$version.txt
+report_area > reports/area_report_$version.txt
+report_power > reports/power_report_noswitching_$version.txt
+# Save files for switching-activity-based power estimation
+change_names -hierarchy -rules verilog
+1
+#write_sdf ../netlist/$ENTITY_NAME.sdf
+write -f verilog -hierarchy -output ../../netlist/$ENTITY_NAME.v
+Writing verilog file '/home/isa16_2021_2022/GIT/lab_isa_group16/lab2/netlist/FPmul.v'.
+1
+#write_sdc ../netlist/$ENTITY_NAME.sdc
+quit
+
+Thank you...
