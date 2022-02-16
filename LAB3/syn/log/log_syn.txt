@@ -1,0 +1,555 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                Version O-2018.06-SP4 for linux64 - Nov 27, 2018
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#RISC-V LITE - design_vision script for the synthesis
+# Analyze the VHDL files from the src folder
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/adder.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration ADDER
+Compiling Architecture BEHAVIOUR of ADDER
+Presto compilation completed successfully.
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb'
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/alu.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration ALU
+Compiling Architecture BEHAVIORAL of ALU
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/comparator.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration COMPARATOR
+Compiling Architecture BEHAVIOUR of COMPARATOR
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/control.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration CONTROL
+Compiling Architecture BEHAVIOUR of CONTROL
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/forwarding_unit.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FORWARDING_UNIT
+Compiling Architecture BEHAVIORAL of FORWARDING_UNIT
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/hazard_mux.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration HAZARD_MUX
+Compiling Architecture BEHAVIOUR of HAZARD_MUX
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/HDU.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration HDU
+Compiling Architecture BEHAVIOUR of HDU
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/immediate_generator.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration IMMEDIATE_GENERATOR
+Compiling Architecture BEHAVIOUR of IMMEDIATE_GENERATOR
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/components/register_file.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration REGISTER_FILE
+Compiling Architecture BEHAVIOUR of REGISTER_FILE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/fetch_stage.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration FETCH_STAGE
+Compiling Architecture STRUCTURAL of FETCH_STAGE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/decode_stage.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration DECODE_STAGE
+Compiling Architecture STRUCTURE of DECODE_STAGE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/execute_stage.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration EXECUTE_STAGE
+Compiling Architecture STRUCTURAL of EXECUTE_STAGE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/memory_stage.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration MEMORY_STAGE
+Compiling Architecture STRUCTURAL of MEMORY_STAGE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/writeback_stage.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration WRITEBACK_STAGE
+Compiling Architecture STRUCTURAL of WRITEBACK_STAGE
+Presto compilation completed successfully.
+1
+analyze -f vhdl -lib WORK ../src/$VERSION_FOLDER/$ENTITY_NAME.vhd
+Running PRESTO HDLC
+Compiling Entity Declaration RISCV_LITE
+Compiling Architecture STRUCTURAL of RISCV_LITE
+Presto compilation completed successfully.
+1
+# Preserve rtl names to ease the procedure for power consumption estimation
+set power_preserve_rtl_hier_names true
+true
+# Elaborate the architecture
+elaborate $ENTITY_NAME -lib WORK
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine riscv_lite line 276 in file
+		'../src/pro_version/riscv_lite.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     PC_out_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine riscv_lite line 288 in file
+		'../src/pro_version/riscv_lite.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     F_D_out_reg     | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine riscv_lite line 304 in file
+		'../src/pro_version/riscv_lite.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    D_EX_out_reg     | Flip-flop |  119  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine riscv_lite line 316 in file
+		'../src/pro_version/riscv_lite.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   EX_MEM_out_reg    | Flip-flop |  73   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine riscv_lite line 328 in file
+		'../src/pro_version/riscv_lite.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   MEM_WB_out_reg    | Flip-flop |  71   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'riscv_lite'.
+Information: Building the design 'fetch_stage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'decode_stage' instantiated from design 'riscv_lite' with
+	the parameters "DATA_WIDTH=32,PARALLELISM=5". (HDL-193)
+
+Statistics for case statements in always block at line 239 in file
+	'../src/pro_version/decode_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           241            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 250 in file
+	'../src/pro_version/decode_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           252            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 369 in file
+	'../src/pro_version/decode_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           371            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 378 in file
+	'../src/pro_version/decode_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           380            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 390 in file
+	'../src/pro_version/decode_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           392            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'execute_stage'. (HDL-193)
+
+Statistics for case statements in always block at line 94 in file
+	'../src/pro_version/execute_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            96            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 106 in file
+	'../src/pro_version/execute_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           108            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 120 in file
+	'../src/pro_version/execute_stage.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           122            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'memory_stage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'writeback_stage'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'register_file' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "DATA_WIDTH=32,PARALLELISM=5". (HDL-193)
+
+Inferred memory devices in process
+	in routine register_file_DATA_WIDTH32_PARALLELISM5 line 38 in file
+		'../src/pro_version/components/register_file.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    registers_reg    | Flip-flop | 1024  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+================================================================================
+|              block name/line               | Inputs | Outputs | # sel inputs |
+================================================================================
+| register_file_DATA_WIDTH32_PARALLELISM5/52 |   32   |   32    |      5       |
+| register_file_DATA_WIDTH32_PARALLELISM5/53 |   32   |   32    |      5       |
+================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'comparator' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "DATA_WIDTH=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'immediate_generator' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "DATA_WIDTH=32". (HDL-193)
+
+Statistics for case statements in always block at line 23 in file
+	'../src/pro_version/components/immediate_generator.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            30            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'adder' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "DATA_WIDTH=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'HDU' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "ADD_WIDTH=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'hazard_mux' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "ADD_WIDTH=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'control' instantiated from design 'decode_stage_DATA_WIDTH32_PARALLELISM5' with
+	the parameters "DATA_WIDTH=32,ADD_WIDTH=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'forwarding_unit'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+
+Statistics for case statements in always block at line 41 in file
+	'../src/pro_version/components/alu.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            43            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+1
+uniquify
+Information: Uniquified 2 instances of design 'forwarding_unit'. (OPT-1056)
+1
+link
+
+  Linking design 'riscv_lite'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (16 designs)              /home/isa16_2021_2022/Diego/lab3_newRising/syn/riscv_lite.db, etc
+  NangateOpenCellLibrary (library) /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db
+  dw_foundation.sldb (library) /software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb
+
+1
+# Set constraints
+# Create a clock whose period is set in the variable at the beginning of this document
+create_clock -name MY_CLK -period $PERIOD clk
+1
+report_clock > reports/clock_report_$SYNTHESIS_NAME.txt
+set_dont_touch_network MY_CLK
+1
+# Set clock uncertainty
+set_clock_uncertainty 0.07 [get_clocks MY_CLK]
+1
+set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clk]
+1
+set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+1
+set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+3.40189
+set_load $OLOAD [all_outputs]
+1
+# Synthesize
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.4 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.4 |     *     |
+============================================================================
+
+
+Information: There are 188 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'writeback_stage'
+  Processing 'memory_stage'
+  Processing 'alu'
+  Processing 'forwarding_unit_0'
+Information: Added key list 'DesignWare' to design 'forwarding_unit_0'. (DDB-72)
+  Processing 'execute_stage'
+  Processing 'control_DATA_WIDTH32_ADD_WIDTH5'
+  Processing 'hazard_mux_ADD_WIDTH5'
+  Processing 'HDU_ADD_WIDTH5'
+Information: Added key list 'DesignWare' to design 'HDU_ADD_WIDTH5'. (DDB-72)
+  Processing 'adder_DATA_WIDTH32'
+  Processing 'immediate_generator_DATA_WIDTH32'
+  Processing 'comparator_DATA_WIDTH32'
+Information: Added key list 'DesignWare' to design 'comparator_DATA_WIDTH32'. (DDB-72)
+  Processing 'register_file_DATA_WIDTH32_PARALLELISM5'
+  Processing 'decode_stage_DATA_WIDTH32_PARALLELISM5'
+Information: Added key list 'DesignWare' to design 'decode_stage_DATA_WIDTH32_PARALLELISM5'. (DDB-72)
+  Processing 'fetch_stage'
+  Processing 'riscv_lite'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Mapping 'DW_leftsh'
+Information: Added key list 'DesignWare' to design 'alu'. (DDB-72)
+  Processing 'alu_DW01_sub_0'
+  Mapping 'alu_DW_cmp_0'
+  Mapping 'DW_sra'
+  Processing 'alu_DW01_add_0'
+  Processing 'adder_DATA_WIDTH32_DW01_add_0'
+  Processing 'fetch_stage_DW01_add_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:03:58   17961.4      0.88      83.2       0.0                          
+    0:04:04   17947.6      0.90      85.7       0.0                          
+    0:04:04   17947.6      0.90      85.7       0.0                          
+    0:04:06   17941.2      0.90      85.2       0.0                          
+    0:04:07   17941.2      0.90      85.2       0.0                          
+    0:04:34   14908.2      1.08     102.1       0.0                          
+    0:04:39   14881.9      0.85      78.5       0.0                          
+    0:04:45   14906.6      0.84      77.0       0.0                          
+    0:04:47   14885.6      0.82      75.9       0.0                          
+    0:04:55   14886.7      0.82      75.3       0.0                          
+    0:04:57   14886.7      0.81      74.5       0.0                          
+    0:04:58   14886.7      0.81      74.5       0.0                          
+    0:04:59   14886.7      0.81      74.5       0.0                          
+    0:04:59   14886.7      0.81      74.5       0.0                          
+    0:05:00   14886.7      0.81      74.5       0.0                          
+    0:05:00   14886.7      0.81      74.5       0.0                          
+    0:05:00   14886.7      0.81      74.5       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:05:00   14886.7      0.81      74.5       0.0                          
+    0:05:03   14922.3      0.71      64.4       0.0 PC_out_reg[21]/D         
+    0:05:08   14948.9      0.63      57.1       0.0 PC_out_reg[24]/D         
+    0:05:10   14950.3      0.60      53.7       0.0 PC_out_reg[24]/D         
+    0:05:13   14952.7      0.57      51.0       0.0 PC_out_reg[24]/D         
+    0:05:18   14980.9      0.51      45.7       0.0 PC_out_reg[24]/D         
+    0:05:21   14987.8      0.48      42.1       0.0 PC_out_reg[24]/D         
+    0:05:25   14999.5      0.44      38.6       0.0 PC_out_reg[24]/D         
+    0:05:26   15008.8      0.42      36.5       0.0 PC_out_reg[24]/D         
+    0:05:27   15008.8      0.42      36.2       0.0 PC_out_reg[16]/D         
+    0:05:28   15008.5      0.41      33.3       0.0 PC_out_reg[16]/D         
+    0:05:31   15019.2      0.37      32.2       0.0 PC_out_reg[16]/D         
+    0:05:34   15019.4      0.37      31.9       0.0 PC_out_reg[16]/D         
+    0:05:36   15037.8      0.34      28.3       0.0 PC_out_reg[16]/D         
+    0:05:37   15072.4      0.33      28.2      27.4 PC_out_reg[16]/D         
+    0:05:40   15078.7      0.31      26.5      27.4 PC_out_reg[14]/D         
+    0:05:42   15080.1      0.31      25.8      27.4 PC_out_reg[14]/D         
+    0:05:43   15083.5      0.30      25.4      27.4 PC_out_reg[14]/D         
+    0:05:45   15089.6      0.27      22.7      27.4 PC_out_reg[14]/D         
+    0:05:46   15089.6      0.27      22.4      27.4 PC_out_reg[12]/D         
+    0:05:49   15091.8      0.26      20.9      27.4 PC_out_reg[12]/D         
+    0:05:50   15094.2      0.26      20.9      27.4 PC_out_reg[12]/D         
+    0:05:52   15095.2      0.25      20.4      27.4 PC_out_reg[12]/D         
+    0:05:53   15096.0      0.24      19.7      27.4 PC_out_reg[12]/D         
+    0:05:56   15097.1      0.24      19.1      27.4 PC_out_reg[12]/D         
+    0:05:58   15097.1      0.24      19.0      27.4 PC_out_reg[12]/D         
+    0:05:59   15098.7      0.23      18.8      27.4 PC_out_reg[12]/D         
+    0:06:04   15099.5      0.23      18.2      27.4 PC_out_reg[12]/D         
+    0:06:06   15110.4      0.20      15.4      27.4 PC_out_reg[31]/D         
+    0:06:08   15116.8      0.19      14.3      27.4 PC_out_reg[19]/D         
+    0:06:10   15142.1      0.17      12.6      51.6 PC_out_reg[9]/D          
+    0:06:11   15150.8      0.15      11.0      51.6 PC_out_reg[9]/D          
+    0:06:14   15164.1      0.13      10.9      51.6 PC_out_reg[9]/D          
+    0:06:16   15170.2      0.11       8.4      51.6 PC_out_reg[9]/D          
+    0:06:17   15177.7      0.09       7.3      51.6 PC_out_reg[9]/D          
+    0:06:19   15183.8      0.09       6.8      51.6 PC_out_reg[9]/D          
+    0:06:21   15192.3      0.08       6.0      51.6 PC_out_reg[9]/D          
+    0:06:24   15196.0      0.07       5.6      51.6 PC_out_reg[31]/D         
+    0:06:26   15196.8      0.07       5.3      51.6 PC_out_reg[9]/D          
+    0:06:28   15196.8      0.07       5.3      51.6 PC_out_reg[31]/D         
+    0:06:31   15198.4      0.07       5.1      51.6 PC_out_reg[9]/D          
+    0:06:33   15199.2      0.07       4.9      51.6 PC_out_reg[31]/D         
+    0:06:34   15199.8      0.06       4.7      51.6 PC_out_reg[9]/D          
+    0:06:38   15201.1      0.06       4.5      51.6 PC_out_reg[9]/D          
+    0:06:39   15202.4      0.06       4.4      51.6 PC_out_reg[9]/D          
+    0:06:55   15202.4      0.06       4.4      51.6 PC_out_reg[9]/D          
+    0:07:07   15205.1      0.06       4.0      51.6                          
+    0:07:19   15205.1      0.06       4.0      51.6                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:07:19   15205.1      0.06       4.0      51.6                          
+    0:07:23   15184.3      0.06       3.9       0.0 PC_out_reg[9]/D          
+    0:07:24   15198.2      0.05       3.7       0.0 PC_out_reg[31]/D         
+    0:07:28   15198.7      0.05       3.7       0.0 PC_out_reg[9]/D          
+    0:07:36   15199.8      0.05       3.2       0.0                          
+    0:07:41   15199.8      0.05       3.2       0.0                          
+    0:07:43   15201.4      0.05       3.2       0.0                          
+    0:07:44   15201.4      0.05       3.2       0.0                          
+    0:07:45   15201.4      0.05       3.2       0.0                          
+    0:07:47   15201.4      0.05       3.2       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:07:47   15201.4      0.05       3.2       0.0                          
+    0:07:48   15201.4      0.05       3.2       0.0                          
+    0:08:00   15189.4      0.05       3.3       0.0                          
+    0:08:09   15183.8      0.05       3.3       0.0                          
+    0:08:11   15179.3      0.05       3.3       0.0                          
+    0:08:11   15177.4      0.05       3.3       0.0                          
+    0:08:12   15175.3      0.05       3.3       0.0                          
+    0:08:12   15175.3      0.05       3.3       0.0                          
+    0:08:13   15175.3      0.05       3.3       0.0                          
+    0:08:15   15124.5      0.08       6.1       0.0                          
+    0:08:15   15124.5      0.08       6.1       0.0                          
+    0:08:15   15124.5      0.08       6.1       0.0                          
+    0:08:16   15124.5      0.08       6.1       0.0                          
+    0:08:16   15124.5      0.08       6.1       0.0                          
+    0:08:16   15124.5      0.08       6.1       0.0                          
+    0:08:24   15126.9      0.07       5.0       0.0 PC_out_reg[28]/D         
+    0:08:32   15161.7      0.01       0.2       0.0 PC_out_reg[8]/D          
+    0:08:32   15161.7      0.01       0.2       0.0 PC_out_reg[8]/D          
+    0:08:34   15163.1      0.01       0.1       0.0 PC_out_reg[8]/D          
+    0:08:35   15187.5      0.01       0.0       0.0 PC_out_reg[31]/D         
+    0:08:40   15187.5      0.00       0.0       0.0                          
+Loading db file '/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'riscv_lite' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'D/reg_file/CLK': 1383 load(s), 1 driver(s)
+1
+# Print reports
+report_timing -delay max > reports/timing_report_setup_$SYNTHESIS_NAME.txt
+report_timing -delay min > reports/timing_report_hold_$SYNTHESIS_NAME.txt
+report_area > reports/area_report_$SYNTHESIS_NAME.txt
+report_power > reports/power_report_noswitching_$SYNTHESIS_NAME.txt
+# Save files for switching-activity-based power estimation
+ungroup -all -flatten
+Warning: Design 'riscv_lite' inherited license information from design 'decode_stage_DATA_WIDTH32_PARALLELISM5'. (DDB-74)
+Information: Added key list 'DesignWare' to design 'riscv_lite'. (DDB-72)
+1
+change_names -hierarchy -rules verilog
+1
+write_sdf ../netlist/$VERSION_FOLDER/$ENTITY_NAME.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/isa16_2021_2022/Diego/lab3_newRising/netlist/pro_version/riscv_lite.sdf'. (WT-3)
+1
+write -f verilog -hierarchy -output ../netlist/$VERSION_FOLDER/$ENTITY_NAME.v
+Writing verilog file '/home/isa16_2021_2022/Diego/lab3_newRising/netlist/pro_version/riscv_lite.v'.
+1
+write_sdc ../netlist/$VERSION_FOLDER/$ENTITY_NAME.sdc
+1
+quit
+
+Thank you...

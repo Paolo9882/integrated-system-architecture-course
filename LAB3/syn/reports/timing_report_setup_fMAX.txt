@@ -1,0 +1,157 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'riscv_lite' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : riscv_lite
+Version: O-2018.06-SP4
+Date   : Sun Feb  6 14:50:26 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: D_EX_out_reg[5]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: PC_out_reg[11]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  riscv_lite         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  D_EX_out_reg[5]/CK (DFFR_X1)                            0.00 #     0.00 r
+  D_EX_out_reg[5]/Q (DFFR_X1)                             0.09       0.09 f
+  EX/id_ex_rs2[0] (execute_stage)                         0.00       0.09 f
+  EX/FW_UNIT/id_ex_rs2[0] (forwarding_unit_0)             0.00       0.09 f
+  EX/FW_UNIT/U20/ZN (XNOR2_X1)                            0.06       0.15 f
+  EX/FW_UNIT/U19/ZN (AND3_X1)                             0.04       0.19 f
+  EX/FW_UNIT/U49/ZN (NAND4_X1)                            0.03       0.22 r
+  EX/FW_UNIT/U52/ZN (NAND2_X1)                            0.03       0.24 f
+  EX/FW_UNIT/U23/ZN (NOR3_X1)                             0.07       0.31 r
+  EX/FW_UNIT/fw_b[1] (forwarding_unit_0)                  0.00       0.31 r
+  EX/U295/ZN (INV_X1)                                     0.03       0.34 f
+  EX/U313/ZN (NAND2_X1)                                   0.04       0.38 r
+  EX/U58/ZN (OR2_X1)                                      0.03       0.41 r
+  EX/U54/ZN (AND3_X1)                                     0.05       0.47 r
+  EX/U53/ZN (OAI22_X1)                                    0.04       0.50 f
+  EX/COMP_ALU/op_B[0] (alu)                               0.00       0.50 f
+  EX/COMP_ALU/add_46/B[0] (alu_DW01_add_0)                0.00       0.50 f
+  EX/COMP_ALU/add_46/U248/ZN (AND2_X1)                    0.05       0.55 f
+  EX/COMP_ALU/add_46/U216/ZN (NAND2_X1)                   0.03       0.58 r
+  EX/COMP_ALU/add_46/U73/ZN (NAND3_X1)                    0.04       0.61 f
+  EX/COMP_ALU/add_46/U125/ZN (NAND2_X1)                   0.03       0.64 r
+  EX/COMP_ALU/add_46/U128/ZN (NAND3_X1)                   0.04       0.68 f
+  EX/COMP_ALU/add_46/U15/ZN (NAND2_X1)                    0.03       0.72 r
+  EX/COMP_ALU/add_46/U17/ZN (NAND3_X1)                    0.04       0.76 f
+  EX/COMP_ALU/add_46/U191/ZN (NAND2_X1)                   0.04       0.80 r
+  EX/COMP_ALU/add_46/U77/ZN (NAND3_X1)                    0.04       0.84 f
+  EX/COMP_ALU/add_46/U111/ZN (NAND2_X1)                   0.04       0.88 r
+  EX/COMP_ALU/add_46/U69/ZN (NAND3_X1)                    0.04       0.91 f
+  EX/COMP_ALU/add_46/U163/ZN (NAND2_X1)                   0.04       0.95 r
+  EX/COMP_ALU/add_46/U67/ZN (NAND3_X1)                    0.04       0.99 f
+  EX/COMP_ALU/add_46/U244/ZN (NAND2_X1)                   0.04       1.02 r
+  EX/COMP_ALU/add_46/U70/ZN (NAND3_X1)                    0.04       1.06 f
+  EX/COMP_ALU/add_46/U226/ZN (NAND2_X1)                   0.04       1.09 r
+  EX/COMP_ALU/add_46/U229/ZN (NAND3_X1)                   0.04       1.13 f
+  EX/COMP_ALU/add_46/U170/ZN (NAND2_X1)                   0.04       1.17 r
+  EX/COMP_ALU/add_46/U71/ZN (NAND3_X1)                    0.05       1.21 f
+  EX/COMP_ALU/add_46/U37/ZN (NAND2_X1)                    0.04       1.25 r
+  EX/COMP_ALU/add_46/U42/ZN (NAND3_X1)                    0.03       1.28 f
+  EX/COMP_ALU/add_46/U56/ZN (NAND2_X1)                    0.03       1.32 r
+  EX/COMP_ALU/add_46/U59/ZN (NAND3_X1)                    0.04       1.35 f
+  EX/COMP_ALU/add_46/U51/ZN (NAND2_X1)                    0.04       1.39 r
+  EX/COMP_ALU/add_46/U53/ZN (NAND3_X1)                    0.04       1.43 f
+  EX/COMP_ALU/add_46/U27/ZN (NAND2_X1)                    0.04       1.47 r
+  EX/COMP_ALU/add_46/U3/ZN (NAND3_X1)                     0.04       1.50 f
+  EX/COMP_ALU/add_46/U202/ZN (NAND2_X1)                   0.03       1.54 r
+  EX/COMP_ALU/add_46/U205/ZN (NAND3_X1)                   0.04       1.58 f
+  EX/COMP_ALU/add_46/U33/ZN (NAND2_X1)                    0.04       1.61 r
+  EX/COMP_ALU/add_46/U35/ZN (NAND3_X1)                    0.04       1.66 f
+  EX/COMP_ALU/add_46/U176/ZN (NAND2_X1)                   0.04       1.70 r
+  EX/COMP_ALU/add_46/U120/ZN (NAND3_X1)                   0.04       1.74 f
+  EX/COMP_ALU/add_46/U238/ZN (NAND2_X1)                   0.03       1.77 r
+  EX/COMP_ALU/add_46/U241/ZN (NAND3_X1)                   0.04       1.81 f
+  EX/COMP_ALU/add_46/U221/ZN (NAND2_X1)                   0.04       1.85 r
+  EX/COMP_ALU/add_46/U68/ZN (NAND3_X1)                    0.04       1.89 f
+  EX/COMP_ALU/add_46/U145/ZN (NAND2_X1)                   0.04       1.92 r
+  EX/COMP_ALU/add_46/U72/ZN (NAND3_X1)                    0.04       1.96 f
+  EX/COMP_ALU/add_46/U139/ZN (NAND2_X1)                   0.03       1.99 r
+  EX/COMP_ALU/add_46/U142/ZN (NAND3_X1)                   0.04       2.03 f
+  EX/COMP_ALU/add_46/U9/ZN (NAND2_X1)                     0.04       2.08 r
+  EX/COMP_ALU/add_46/U2/ZN (NAND3_X1)                     0.04       2.11 f
+  EX/COMP_ALU/add_46/U92/ZN (NAND2_X1)                    0.04       2.15 r
+  EX/COMP_ALU/add_46/U95/ZN (NAND3_X1)                    0.04       2.19 f
+  EX/COMP_ALU/add_46/U158/ZN (NAND2_X1)                   0.03       2.22 r
+  EX/COMP_ALU/add_46/U160/ZN (NAND3_X1)                   0.04       2.26 f
+  EX/COMP_ALU/add_46/U185/ZN (NAND2_X1)                   0.03       2.29 r
+  EX/COMP_ALU/add_46/U187/ZN (NAND3_X1)                   0.05       2.34 f
+  EX/COMP_ALU/add_46/U21/ZN (NAND2_X1)                    0.04       2.38 r
+  EX/COMP_ALU/add_46/U1/ZN (NAND3_X1)                     0.04       2.42 f
+  EX/COMP_ALU/add_46/U196/ZN (NAND2_X1)                   0.04       2.46 r
+  EX/COMP_ALU/add_46/U199/ZN (NAND3_X1)                   0.04       2.50 f
+  EX/COMP_ALU/add_46/U152/ZN (NAND2_X1)                   0.04       2.53 r
+  EX/COMP_ALU/add_46/U154/ZN (NAND3_X1)                   0.04       2.57 f
+  EX/COMP_ALU/add_46/U99/ZN (NAND2_X1)                    0.04       2.61 r
+  EX/COMP_ALU/add_46/U101/ZN (NAND3_X1)                   0.04       2.65 f
+  EX/COMP_ALU/add_46/U233/ZN (NAND2_X1)                   0.04       2.69 r
+  EX/COMP_ALU/add_46/U235/ZN (NAND3_X1)                   0.04       2.73 f
+  EX/COMP_ALU/add_46/U132/ZN (NAND2_X1)                   0.03       2.75 r
+  EX/COMP_ALU/add_46/U87/ZN (AND3_X1)                     0.06       2.81 r
+  EX/COMP_ALU/add_46/U39/Z (XOR2_X1)                      0.06       2.87 r
+  EX/COMP_ALU/add_46/SUM[31] (alu_DW01_add_0)             0.00       2.87 r
+  EX/COMP_ALU/U5/ZN (AOI22_X1)                            0.04       2.91 f
+  EX/COMP_ALU/U244/ZN (NAND2_X1)                          0.04       2.95 r
+  EX/COMP_ALU/result[31] (alu)                            0.00       2.95 r
+  EX/result[31] (execute_stage)                           0.00       2.95 r
+  D/DATA_ALU_EX[31] (decode_stage_DATA_WIDTH32_PARALLELISM5)
+                                                          0.00       2.95 r
+  D/U426/ZN (AOI22_X1)                                    0.04       2.99 f
+  D/U6/ZN (NAND2_X1)                                      0.03       3.02 r
+  D/data_comparator/INPUT2[31] (comparator_DATA_WIDTH32)
+                                                          0.00       3.02 r
+  D/data_comparator/U46/ZN (XNOR2_X1)                     0.06       3.08 r
+  D/data_comparator/U2/ZN (AND4_X2)                       0.06       3.14 r
+  D/data_comparator/OUTPUT (comparator_DATA_WIDTH32)      0.00       3.14 r
+  D/CU/COMP (control_DATA_WIDTH32_ADD_WIDTH5)             0.00       3.14 r
+  D/CU/U9/ZN (AOI21_X1)                                   0.03       3.17 f
+  D/CU/U10/ZN (INV_X1)                                    0.04       3.21 r
+  D/CU/TURN_MUX (control_DATA_WIDTH32_ADD_WIDTH5)         0.00       3.21 r
+  D/TURN_MUX_IF (decode_stage_DATA_WIDTH32_PARALLELISM5)
+                                                          0.00       3.21 r
+  F/en_jump (fetch_stage)                                 0.00       3.21 r
+  F/U15/Z (BUF_X1)                                        0.04       3.25 r
+  F/U37/ZN (INV_X1)                                       0.04       3.29 f
+  F/U84/ZN (AOI22_X1)                                     0.06       3.35 r
+  F/U39/ZN (INV_X1)                                       0.02       3.38 f
+  F/next_addr[11] (fetch_stage)                           0.00       3.38 f
+  U374/ZN (NAND2_X1)                                      0.03       3.40 r
+  U373/ZN (OAI21_X1)                                      0.03       3.43 f
+  PC_out_reg[11]/D (DFFR_X1)                              0.01       3.44 f
+  data arrival time                                                  3.44
+
+  clock MY_CLK (rise edge)                                3.56       3.56
+  clock network delay (ideal)                             0.00       3.56
+  clock uncertainty                                      -0.07       3.49
+  PC_out_reg[11]/CK (DFFR_X1)                             0.00       3.49 r
+  library setup time                                     -0.04       3.45
+  data required time                                                 3.45
+  --------------------------------------------------------------------------
+  data required time                                                 3.45
+  data arrival time                                                 -3.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
