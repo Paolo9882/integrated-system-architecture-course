@@ -20,5 +20,5 @@ Lab3 is organised in the following folders:
 
 - innovus: the directory containing the place and route files and results
 
-![alt text](/innovus/snapshot/basic_version/ss_riscv_lite.place.gif)
+![alt text](https://github.com/drvladbancila/ISA_GR16/LAB3/innovus/snapshot/basic_version/ss_riscv_lite.place.gif)
 
