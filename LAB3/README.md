@@ -19,3 +19,6 @@ Lab3 is organised in the following folders:
 - saif: the directory containing the saif files (converted switching activity for synthesis)
 
 - innovus: the directory containing the place and route files and results
+
+![alt text](/innovus/snapshot/basic_version/ss_riscv_lite.place.gif)
+
