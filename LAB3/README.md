@@ -3,12 +3,12 @@
 ## Basic informations
 
 The description VHDL files are under the __src/__ directory. The testbench files are located in the __tb/__ directory. 
-To simulate the design go into the __sim/__ directory and:
-`sim.sh <path/to/assembly/file> <basic/pro>`
-To synthesize it, go into the __syn/__ directory and:
-`syn.sh <options> <arguments>` (more information by executing `syn.sh -?`)
-To do P&R automatically go into __innovus/__ directory and:
-`inn.sh <options> <arguments> (more information by executing `inn.sh -?`)
+- To simulate the design go into the __sim/__ directory and:
+  `sim.sh <path/to/assembly/file> <basic/pro>`
+- To synthesize it, go into the __syn/__ directory and:
+  `syn.sh <options> <arguments>` (more information by executing `syn.sh -?`)
+- To do P&R automatically go into __innovus/__ directory and:
+  `inn.sh <options> <arguments> (more information by executing `inn.sh -?`)
 
 ![RISC-V P&R](https://github.com/drvladbancila/ISA_GR16/blob/feb69e727e87fdacb145b83f39dacdfc15be63bd/LAB3/innovus/snapshot/basic_version/ss_riscv_lite.place.gif)
 
