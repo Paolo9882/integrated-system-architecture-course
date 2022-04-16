@@ -1,0 +1,38 @@
+H 2141964 11 3 0 19 15 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 23 ./work.adder(behaviour) X5Qi6]J9SSfTC>HW5DJP90 7 1
+D 22 ./work.alu(behavioral) OocO3Ual6m<GG>>0b=mh30 13 1
+D 19 ./work.clk_gen(beh) gj4`Z6^Ii?hjanZM0oo6k2 0 1
+D 28 ./work.comparator(behaviour) KUf_D2B^^k1T5bP6fcZWb1 5 1
+D 25 ./work.control(behaviour) MM5lnW?Bd4?Oli5jYY^IM2 10 1
+D 23 ./work.data_memory(beh) fickTe4[oohLWm3h9lDR_3 1 1
+D 30 ./work.decode_stage(structure) C=7k@0Gg=8mTM5YLkYH^>2 12 1
+D 32 ./work.execute_stage(structural) ]807L8H>DYXbEh>U:^fY71 14 1
+D 30 ./work.fetch_stage(structural) >:QZaQ?UeYlEDoPTcHYT71 3 1
+D 34 ./work.forwarding_unit(behavioral) mjCjKlQ6FO4jc4CfFcO6I0 11 1
+D 28 ./work.hazard_mux(behaviour) JTk?X`07UjE7WOW[9JG@K3 9 1
+D 21 ./work.hdu(behaviour) A=NZE=<=i9NLzf9?<bmcR2 8 1
+D 37 ./work.immediate_generator(behaviour) 6;KV@QJ8_`z0Y<PUig15[3 6 1
+D 30 ./work.instruction_memory(beh) edC3RkVUk]czSDJ>BJc==1 2 1
+D 31 ./work.memory_stage(structural) C7RCf;oL6H^nWfg[S3KVP3 15 1
+D 31 ./work.register_file(behaviour) ZIEl6@;RPEFA8XGe=QiIJ0 4 1
+D 29 ./work.riscv_lite(structural) GzLeFDNUnmf65WSdgRh2Z2 17 1
+D 20 ./work.tb_riscv_lite BVmW<OcjlTE4WIgg5MJMY3 18 0
+D 34 ./work.writeback_stage(structural) K9fg2[@k`Ui[?Qa5X;Wj50 16 1
+2 0  1 9QMi:F>YQf_m6iN@l=_j`0 5 8 1
+2 0  1 zG3D2b9NP;`;6S^=A2<0U0 2 5 1
+2 0  1 T5<m9CL_RmahgO:gY8e050 1 4 1
+2 0  0 69j^C@jb:X>i7e;HX>L0K3 11 14 1
+2 0  0 kfWob30Wl@GnKzI2hd:?U1 8 11 1
+2 0  1 B:Ff@XYoSobEf]goofoAI1 3 6 1
+2 0  1 bNBWRR;SiZ@Kg1`f<ZiXg0 6 9 1
+2 0  1 FTP7SIfz4bf>=2IB^TGM83 4 7 1
+2 0  0 L^V8K3J?Wgc;H`H>SFaIL2 0 3 1
+2 0  0 RZQ4I78_KjE>T<U3lchh:3 10 13 1
+2 0  1 3X[g?OT763zijI47c:WSh3 7 10 1
+2 0  1 ]Gf<cJYIfBB::J`dkJbVA2 9 12 1
+2 0  0 Ph:Vo4EGTWMB9^6cbMcMY3 12 15 1
+2 0  0 ozhffBXmaM8zJJ8AAm3]G3 13 16 1
+2 4 fast 0 4>LKY:Z2aX]V=8ck2=Y5?0 14 18 1
